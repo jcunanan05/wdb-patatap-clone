@@ -9,27 +9,10 @@
   <script type="text/javascript" src="./lib/paper-full.js"></script>
 
   <script type="text/paperscript" canvas="myCanvas">
-    var pointX = 10;
-    var pointY = 10;
-    var radius = 10;
-    //var myCircle = new Path.Circle(new Point(pointX, pointY), radius);
-    //myCircle.fillColor = 'purple';
-    
-    for (var i = 0; i < 10; i++) {
-      makeCircle(100)
-    }
-
-    function makeCircle(offsetX) {
-      var x = pointX;
-      var y = pointY;
-
-      for (var i = 0; i < 10; i++) {
-        new Path.Circle(new Point(x, y), radius).fillColor = 'purple';
-
-        x += offsetX;
+    for (var x = 0; x < 1000; x += 100) {
+      for (var y = 0; y < 1000; y += 100) {
+        var circle2 = new Path.Circle(new Point(x, y), 10).fillColor = 'green';
       }
-
-      pointY += 100;
     }
   </script>
 </head>
