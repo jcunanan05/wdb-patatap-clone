@@ -218,8 +218,21 @@
     
     function onFrame(event) {
       for (var i = 0; i < circles.length; i++) {
-        circles[i].fillColor.hue += 1;
-        circles[i].scale(0.9);
+        var currentCircle = circles[i];
+        currentCircle.fillColor.hue += 1;
+        currentCircle.scale(0.9);
+
+        removeCircle(currentCircle, i);
+      }
+    }
+
+
+    function removeCircle(currentCircle, i) {
+      if(currentCircle.area < 1) {
+        //remove circle from canvas
+        currentCircle.remove();
+        //remove from array
+        circles.splice(i, 1);
       }
     }
   </script>
